@@ -14,6 +14,7 @@ let rowdyResults = rowdyLogger.begin(app)
 app.use(morgan('dev'))
 app.use(cors())
 app.use(express.urlencoded({ extended: false })) // Accept form data
+app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(express.json()) // Accept data from fetch (or any AJAX call)
 
 // Routes
