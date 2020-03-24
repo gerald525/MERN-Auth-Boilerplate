@@ -5,6 +5,7 @@ let express = require('express')
 let expressJwt = require('express-jwt')
 let morgan = require('morgan')
 let rowdyLogger = require('rowdy-logger')
+let path = require('path')
 
 // Instantiate app
 let app = express()
