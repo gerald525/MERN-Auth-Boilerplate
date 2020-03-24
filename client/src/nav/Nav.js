@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom'
 const Nav = props => {
   const handleLogout = e => {
     e.preventDefault()
-    // TODO: Remove the token from localstorage (or cookies)
-    // TODO: Update the state of the App
+    // Remove the token from localstorage
+    localStorage.removeItem('mernToken')
+    // Update the state of the App
+    props.updateUser();
   }
 
   let links = (
@@ -19,7 +21,20 @@ const Nav = props => {
     </span>
   )
 
-  // TODO: If the user is logged in, show profile page and logout links
+  if (props.user) {
+    links = (
+      <span>
+        <li>Hello {props.user.firstname}!</li>
+        <li>
+          <Link to="/profile">Profile</Link>
+        </li>
+        <li>
+          <Link to="/" onClick={handleLogout}>Logout</Link>
+        </li>
+      </span>
+    )
+  }
+
 
   return (
     <nav>
