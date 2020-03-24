@@ -29,8 +29,8 @@ app.use('/auth', expressJwt({
 app.use('/dogs', expressJwt({ secret: process.env.JWT_SECRET }), require('./controllers/dogs'))
 
 app.get('*', (req, res) => {
-  res.status(404).send({ message: 'Not Found' })
-})
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
+});
 
 app.listen(process.env.PORT, () => {
   rowdyResults.print()
