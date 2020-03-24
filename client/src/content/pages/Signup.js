@@ -19,7 +19,7 @@ const Signup = props => {
   
   const handleSubmit = e => {
     e.preventDefault()
-    fetch(`http://localhost:8000/auth/signup`, {
+    fetch(`/auth/signup`, {
       method: 'POST',
       body: JSON.stringify({
         firstname,
