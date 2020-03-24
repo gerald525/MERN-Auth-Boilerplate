@@ -19,7 +19,7 @@ const Signup = props => {
   
   const handleSubmit = e => {
     e.preventDefault()
-    fetch(`${process.env.REACT_APP_SERVER_URL}/auth/signup`, {
+    fetch(`localhost:3000/auth/signup`, {
       method: 'POST',
       body: JSON.stringify({
         firstname,
