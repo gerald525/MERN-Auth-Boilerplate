@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "keywords": [],
-  "author": "",
+  "author": "gerald525",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
